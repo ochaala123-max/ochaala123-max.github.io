@@ -1,11 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikah jir</title>
+    <title>Pernikahan Fahri & Rafli</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Great Vibes & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        script: ['"Great Vibes"', 'cursive'],
+                        sans: ['"Poppins"', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: '#C5A059',
+                        darkgold: '#A37F3E',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>ini nikah cu</h1>
+<body class="font-sans bg-stone-900 text-stone-100 overflow-x-hidden">
+
+    <!-- COVER / HALAMAN DEPAN -->
+    <section id="cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-stone-950 text-center px-4 transition-transform duration-1000">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+        <div class="relative z-10 max-w-md mx-auto p-8 bg-stone-900/80 backdrop-blur-md rounded-2xl border border-gold/30 shadow-2xl">
+            <p class="text-sm tracking-widest text-gold uppercase mb-2">The Wedding Of</p>
+            <h1 class="font-script text-6xl text-gold mb-4">Fahri & Rafli</h1>
+            <p class="text-stone-300 text-sm mb-6">Kepada Yth. Bapak/Ibu/Saudara/i,</p>
+            <div id="guest-name" class="font-semibold text-lg text-white mb-6 p-2 bg-stone-800 rounded-lg border border-stone-700">Uncle Family</div>
+            <button onclick="openInvitation()" class="bg-gold hover:bg-darkgold text-stone-950 font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg flex items-center justify-center gap-2 mx-auto">
+                <i class="fa-solid fa-envelope-open-text"></i> Buka Undangan
+            </button>
+        </div>
+    </section>
+
+    <!-- KONTEN UTAMA (TERSEMBUNYI SEBELUM DIBUKA) -->
+    <div id="main-content" class="hidden opacity-0 transition-opacity duration-1000">
+        
+        <!-- HERO SECTION -->
+        <header class="relative h-screen flex flex-col items-center justify-center text-center px-4 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center">
+            <div class="absolute inset-0 bg-stone-950/60"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <p class="text-gold tracking-widest uppercase text-sm mb-3">Pernikahan Kami</p>
+                <h1 class="font-script text-7xl md:text-8xl text-gold mb-4">Fahri & Rafli</h1>
+                <p class="text-stone-300 text-lg mb-8">Minggu, 04 Oktober 2026</p>
+                
+                <!-- COUNTDOWN TIMER -->
+                <div class="grid grid-cols-4 gap-3 max-w-md mx-auto bg-stone-900/70 backdrop-blur-md p-4 rounded-xl border border-gold/30">
+                    <div>
+                        <span id="days" class="text-2xl font-bold text-gold">00</span>
+                        <p class="text-xs text-stone-400">Hari</p>
+                    </div>
+                    <div>
+                        <span id="hours" class="text-2xl font-bold text-gold">00</span>
+                        <p class="text-xs text-stone-400">Jam</p>
+                    </div>
+                    <div>
+                        <span id="minutes" class="text-2xl font-bold text-gold">00</span>
+                        <p class="text-xs text-stone-400">Menit</p>
+                    </div>
+                    <div>
+                        <span id="seconds" class="text-2xl font-bold text-gold">00</span>
+                        <p class="text-xs text-stone-400">Detik</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PASANGAN MEMPELAI -->
+        <section class="py-20 px-4 bg-stone-900 max-w-4xl mx-auto text-center">
+            <p class="text-gold tracking-widest uppercase text-sm mb-2">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan</p>
+            <h2 class="text-3xl font-bold mb-12">Assalamu'alaikum Wr. Wb.</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Mempelai Wanita -->
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-gold shadow-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Sarah" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-script text-4xl text-gold mb-2">Sarah Amalia, S.Psi.</h3>
+                    <p class="text-stone-400 text-sm mb-4">Putri dari Bpk. Ahmad & Ibu Siti</p>
+                    <a href="https://instagram.com" target="_blank" class="text-gold hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+                </div>
+                
+                <!-- Mempelai Pria -->
+                <div class="flex flex-col items-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-gold shadow-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Rizky" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-script text-4xl text-gold mb-2">Rizky Pratama, S.T.</h3>
+                    <p class="text-stone-400 text-sm mb-4">Putra dari Bpk. Budi & Ibu Ani</p>
+                    <a href="https://instagram.com" target="_blank" class="text-gold hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACARA / EVENT -->
+        <section class="py-20 px-4 bg-stone-950 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-script text-5xl text-gold mb-4">Waktu & Tempat</h2>
+                <p class="text-stone-400 mb-12">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Akad -->
+                    <div class="bg-stone-900 p-8 rounded-2xl border border-gold/30 shadow-xl">
+                        <i class="fa-solid fa-ring text-4xl text-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Akad Nikah</h3>
+                        <p class="text-stone-300 text-sm mb-4">Pukul 08.00 WIB - Selesai</p>
+                        <p class="text-stone-400 text-sm mb-6">Gedung Mulia Hall, Jl. Sudirman No. 123, Jakarta Selatan</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-gold/20 hover:bg-gold text-gold hover:text-stone-950 border border-gold px-6 py-2 rounded-full transition-all text-sm font-semibold">
+                            <i class="fa-solid fa-map-location-dot"></i> Lihat Google Maps
+                        </a>
+                    </div>
+                    <!-- Resepsi -->
+                    <div class="bg-stone-900 p-8 rounded-2xl border border-gold/30 shadow-xl">
+                        <i class="fa-solid fa-glass-cheers text-4xl text-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Resepsi Pernikahan</h3>
+                        <p class="text-stone-300 text-sm mb-4">Pukul 11.00 WIB - 14.00 WIB</p>
+                        <p class="text-stone-400 text-sm mb-6">Gedung Mulia Hall, Jl. Sudirman No. 123, Jakarta Selatan</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block bg-gold/20 hover:bg-gold text-gold hover:text-stone-950 border border-gold px-6 py-2 rounded-full transition-all text-sm font-semibold">
+                            <i class="fa-solid fa-map-location-dot"></i> Lihat Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERI -->
+        <section class="py-20 px-4 bg-stone-900 max-w-5xl mx-auto text-center">
+            <h2 class="font-script text-5xl text-gold mb-4">Galeri Kami</h2>
+            <p class="text-stone-400 mb-12">Momen kebersamaan kami</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="overflow-hidden rounded-xl h-64 border border-stone-800"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500"></div>
+                <div class="overflow-hidden rounded-xl h-64 border border-stone-800"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500"></div>
+                <div class="overflow-hidden rounded-xl h-64 border border-stone-800"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500"></div>
+            </div>
+        </section>
+
+        <!-- RSVP & UCAPAN -->
+        <section class="py-20 px-4 bg-stone-950">
+            <div class="max-w-xl mx-auto bg-stone-900 p-8 rounded-2xl border border-gold/30 shadow-xl">
+                <h2 class="font-script text-4xl text-gold text-center mb-2">RSVP & Ucapan</h2>
+                <p class="text-stone-400 text-center text-sm mb-8">Berikan konfirmasi kehadiran dan doa restu Anda</p>
+                
+                <form id="rsvp-form" onsubmit="submitRSVP(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm text-stone-300 mb-1">Nama</label>
+                        <input type="text" id="name" required class="w-full bg-stone-800 border border-stone-700 rounded-lg p-3 text-white focus:outline-none focus:border-gold">
+                    </div>
+                    <div>
+                        <label class="block text-sm text-stone-300 mb-1">Konfirmasi Kehadiran</label>
+                        <select id="status" class="w-full bg-stone-800 border border-stone-700 rounded-lg p-3 text-white focus:outline-none focus:border-gold">
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                            <option value="Masih Ragu">Masih Ragu</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm text-stone-300 mb-1">Ucapan & Doa</label>
+                        <textarea id="message" rows="4" required class="w-full bg-stone-800 border border-stone-700 rounded-lg p-3 text-white focus:outline-none focus:border-gold"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gold hover:bg-darkgold text-stone-950 font-semibold py-3 rounded-lg transition">Kirim Ucapan</button>
+                </form>
+
+                <!-- Daftar Ucapan -->
+                <div id="comments-list" class="mt-8 space-y-4 max-h-60 overflow-y-auto pr-2">
+                    <div class="bg-stone-800 p-4 rounded-lg border border-stone-700 text-sm">
+                        <div class="flex justify-between font-semibold text-gold mb-1">
+                            <span>Budi Santoso</span>
+                            <span class="text-xs text-stone-400">Hadir</span>
+                        </div>
+                        <p class="text-stone-300">Selamat berbahagia Sarah & Rizky! Semoga menjadi keluarga sakinah, mawaddah, warahmah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-8 bg-stone-950 text-center text-stone-500 text-sm border-t border-stone-900">
+            <p>&copy; 2026 Sarah & Rizky Wedding. All rights reserved.</p>
+        </footer>
+
+        <!-- AUDIO PLAYER & TOMBOL KONTROL -->
+        <audio id="bg-music" loop>
+            <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+        </audio>
+        <button id="music-btn" onclick="toggleMusic()" class="fixed bottom-6 right-6 z-40 bg-gold text-stone-950 w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-lg animate-spin">
+            <i id="music-icon" class="fa-solid fa-compact-disc"></i>
+        </button>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mengambil nama tamu dari URL parameter (Contoh: index.html?to=Bapak+Budi)
+        const urlParams = new URLSearchParams(window.location.search);
+        const guest = urlParams.get('to');
+        if (guest) {
+            document.getElementById('guest-name').innerText = decodeURIComponent(guest);
+        }
+
+        // Buka Undangan
+        function openInvitation() {
+            const cover = document.getElementById('cover');
+            const mainContent = document.getElementById('main-content');
+            const music = document.getElementById('bg-music');
+
+            cover.classList.add('-translate-y-full');
+            mainContent.classList.remove('hidden');
+            setTimeout(() => {
+                mainContent.classList.remove('opacity-0');
+            }, 100);
+            
+            // Putar Musik
+            music.play().catch(e => console.log("Audio autoplay blocked"));
+        }
+
+        // Kontrol Musik
+        let isPlaying = true;
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const btn = document.getElementById('music-btn');
+            if (isPlaying) {
+                music.pause();
+                btn.classList.remove('animate-spin');
+                btn.innerHTML = '<i class="fa-solid fa-play"></i>';
+            } else {
+                music.play();
+                btn.classList.add('animate-spin');
+                btn.innerHTML = '<i class="fa-solid fa-compact-disc"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Countdown Timer
+        const weddingDate = new Date("December 15, 2026 08:00:00").getTime();
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance > 0) {
+                document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+                document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+            }
+        }, 1000);
+
+        // Form RSVP & Ucapan (Simpan lokal sementara di halaman)
+        function submitRSVP(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const status = document.getElementById('status').value;
+            const message = document.getElementById('message').value;
+
+            const commentsList = document.getElementById('comments-list');
+            const newComment = document.createElement('div');
+            newComment.className = 'bg-stone-800 p-4 rounded-lg border border-stone-700 text-sm';
+            newComment.innerHTML = `
+                <div class="flex justify-between font-semibold text-gold mb-1">
+                    <span>${name}</span>
+                    <span class="text-xs text-stone-400">${status}</span>
+                </div>
+                <p class="text-stone-300">${message}</p>
+            `;
+            commentsList.prepend(newComment);
+            document.getElementById('rsvp-form').reset();
+            alert('Terima kasih! Konfirmasi dan ucapan Anda telah terkirim.');
+        }
+    </script>
 </body>
 </html>
