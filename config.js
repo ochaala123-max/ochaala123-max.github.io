@@ -38,7 +38,7 @@ const CONFIG = {
     },
 
     // Musik Latar (Bisa diisi link MP3 online atau nama file lokal misal "audio/musik.mp3")
-    audioSrc: "c:\Users\User\Downloads\Edd_Sheeran_-_Perfect_(mp3.pm).mp3",
+    audioSrc: "c:\xampp\htdocs\Edd_Sheeran_-_Perfect_(mp3.pm).mp3",
 
     // Galeri Foto (Daftar link foto untuk galeri, bisa ditambah atau dikurangi)
     galeriFoto: [
